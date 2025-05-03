@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo Installing Terraform...
+      - curl -O https://releases.hashicorp.com/terraform/1.6.0/terraform_1.6.0_linux_amd64.zip
+      - unzip terraform_1.6.0_linux_amd64.zip
+      - mv terraform /usr/local/bin/
+      - terraform -version
+
+  pre_build:
+    commands:
+      - echo Logging in...
+      - terraform init -backend=true
+
+  build:
+    commands:
+      - echo Destroying previous infra...
+      - terraform destroy -auto-approve
+      - echo Reapplying infra...
+      - terraform apply -auto-approve
