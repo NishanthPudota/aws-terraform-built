@@ -24,7 +24,7 @@ Create it as per you requirement I created private and public subnets in 2 Avail
 ## Step:6 Create an IAM role.
 Its considered to most crucial and should be done with atmost care.
 Attach EC2 access, S3 access, IAM access, cloudwatchevents access policies to the role and create an inline policy like below.
-![alt text](images/Inline_policy.png)
+![alt text](images/inline_policy.png)
 
 ## Step:7 Create a connection to your Github repo from aws developer tools.
 
