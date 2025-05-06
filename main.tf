@@ -32,7 +32,7 @@ data "aws_ami" "amazon_linux" {
 resource "aws_instance" "first_instance" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = "t2.micro"
-  subnet_id     = "subnet-04882711ff67754da"
+  subnet_id     = "subnet-09d40a18231fa204c"
   security_groups = ["sg-0fe159676c4ddc32b"]
   tags = {
     Name = "ExampleAppServerInstance"
